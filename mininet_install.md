@@ -1,8 +1,7 @@
 # mininet安装指南
+[toc]
 
-## 修改环境
-
-### 更新python环境
+## 更新python环境
 1. 将python的软连替换为python3， pip的软连替换为pip3
 2. 步骤：
 
@@ -26,7 +25,7 @@ python
 >>> import sgp4        #    无报错，即环境配置成功
 ```
 
-### 拉代码(算了还是直接从129机器拷贝吧)
+## 拉代码(算了还是直接从129机器拷贝吧)
 
 ```bash
 cd /data
@@ -36,3 +35,30 @@ cd mininet/utils
 ./install.sh        #一般不会有错
 mn        # 验证，出现mininet> 就行
 ```
+## 拉代码from git
+**注：目前代码未开源，所以能scp尽量scp，需要从git拉代码就联系我加公钥**
+### git配置
+1. 下载
+CentOS用户使用`yum install git`， Ubuntu用户选择`apt install git`
+2. git配置
+```bash
+git config --global user.name "Your Name"        # name填写blqlkx
+git config --global user.email "email@example.com"        # email填写871640094@qq.com
+git config --list        # 查看配置是否生效
+```
+3. 生成ssh key
+
+```bash
+ssh-keygen -t rsa -C your_email@youremail.com        # 一路会车
+cd ~/.ssh
+cat id_rsa.pub        #获取公钥
+```
+
+4. 公钥在github上配置完成后即可拉代码
+
+## mininet安装
+1. git clone git@github.com:blqlkx/mininet_satellite.git
+2. mv mininet_satellite mininet
+3. cd mininet/utils
+4. ./install.sh
+5. 如果改了代码需要再次install，只需执行./install.sh -n
