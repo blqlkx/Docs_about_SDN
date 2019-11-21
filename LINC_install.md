@@ -72,8 +72,8 @@ Eshell V5.10.4  (abort with ^G)
 (linc@workgroup3)1> 
 
 7. 常用命令
-运行：~/LINC-Switch/rel/linc/bin# ./linc start
-停止：~/LINC-Switch/rel/linc/bin# ./linc stop
+运行：`~/LINC-Switch/rel/linc/bin# ./linc start`
+停止：`~/LINC-Switch/rel/linc/bin# ./linc stop`
 
 8. 参考URL
 [LINC安装指南_SDNLAB](https://www.sdnlab.com/13326.html)
