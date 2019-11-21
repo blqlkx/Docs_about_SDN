@@ -4,7 +4,7 @@
 ## repository\_url
 ### mininet
 origin version URL: https://github.com/mininet/mininet.git
-self-updated URL: https://github.com/blqlkx/mininet\_satellite.git
+self-updated URL: https://github.com/blqlkx/mininet_satellite.git
 
 ### LINC
 URL: https://github.com/FlowForwarding/LINC-Switch.git
