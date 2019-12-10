@@ -3,10 +3,10 @@
 ## Erlang环境安装
 参考GitHub：https://github.com/FlowForwarding/LINC-Switch
 
-### Ubuntu（执行1，3，6）
-1. sudo apt-get install gcc wget make autoconf openssl libssl-dev libncurses5 libncurses5-dev libssl0.9.8
+### Ubuntu（执行1，3，7）
+1. sudo apt-get install gcc wget make autoconf openssl libssl-dev libncurses5 libncurses5-dev
 注意apt包的版本，高版本的需要先卸载再安装低版本
-libssl0.9.8的安装：https://pkgs.org/download/libssl0.9.8
+libssl0.9.8的安装：https://pkgs.org/download/libssl0.9.8， 下载并用`dpkg -i libssl_xxx.deb`安装
 
 2. CentOS安装 有几个包不一样，用
 yum install gcc wget make autoconf openssl openssl-devel ncurses ncurses-devel
@@ -47,7 +47,7 @@ Erlang (BEAM) emulator version 5.10.4
 Compiled on Tue Aug 19 16:45:11 2014
 
 ## LINC安装
-1. git clone \<repo>, 
+1. git clone \<repo>,
 URL : https://github.com/FlowForwarding/LINC-Switch
 2. cd LINC_SWITCH
 3. 安装其他用于LINC的apt包
@@ -72,8 +72,8 @@ Eshell V5.10.4  (abort with ^G)
 (linc@workgroup3)1> 
 
 7. 常用命令
-运行：`~/LINC-Switch/rel/linc/bin# ./linc start`
-停止：`~/LINC-Switch/rel/linc/bin# ./linc stop`
+运行：~/LINC-Switch/rel/linc/bin# ./linc start
+停止：~/LINC-Switch/rel/linc/bin# ./linc stop
 
 8. 参考URL
 [LINC安装指南_SDNLAB](https://www.sdnlab.com/13326.html)
@@ -81,6 +81,16 @@ Eshell V5.10.4  (abort with ^G)
 参考GitHub（见上文）
 [OTP_Github](https://github.com/erlang/otp/blob/maint/HOWTO/INSTALL.md)
 
+## LINC_config_generator安装
+1. git clone https://github.com/FlowForwarding/LINC-config-generator
+2. cd LINC-config-generator
+3. make
+4. 将lincoe的sysconfig文件复制到此文件夹下：cp /data/linc-oe/rel/files/sys.config sys.config.template
+5. chmod +x /data/onos/tools/test/bin/onos-netcfg(更改权限)
+
+## 验证IP+光
+cd /data/mininet/custom
+sudo -E python topos/opticalTest.py应该能够启动
 
 ## 常见问题
 1. LINC的最后make报错

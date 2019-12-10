@@ -1,5 +1,5 @@
 # mininet安装指南
-[toc]
+
 
 ## 更新python环境
 1. 将python的软连替换为python3， pip的软连替换为pip3
@@ -20,6 +20,7 @@ apt install python3-pip        # 有时需要先执行apt update&&apt upgrade
 which pip3        #回显有路径即可, cd目录
 mv pip3 pip
 pip install sgp4        #执行两遍，第二遍会提示already installed sgp4 in DIR, 记录下安装目录
+pip install bottle
 
 python
 >>> import sgp4        #    无报错，即环境配置成功
@@ -62,3 +63,12 @@ cat id_rsa.pub        #获取公钥
 3. cd mininet/utils
 4. ./install.sh
 5. 如果改了代码需要再次install，只需执行./install.sh -n
+
+## 启动
+lkx.py是IP+光拓扑，和opticalTest差不多，6sw2ho是纯IP拓扑， LINCOE是卫星拓扑（还没修改完）
+```bash
+cd mininet/custom        # 有一些test拓扑
+sudo -E python XXX.py        # 都是这么启动，包括IP+光
+cd mininet/custom/Satellites/src
+sudo -E python LINCOE.py        # 卫星拓扑
+```
